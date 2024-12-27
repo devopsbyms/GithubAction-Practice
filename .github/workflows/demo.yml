@@ -11,8 +11,10 @@ jobs:
               uses: actions/checkout@v4
             - name: Install dependencies
               run: npm ci
-            - name: Lint code
-              run: npm init @eslint/config
+            - name: Install ESLint
+              run: npm install eslint
+            - name: Lint Code
+              run: npx eslint . --ext .js,.jsx,.ts,.tsx
             - name: Test code
               run: npm run test
     build:
